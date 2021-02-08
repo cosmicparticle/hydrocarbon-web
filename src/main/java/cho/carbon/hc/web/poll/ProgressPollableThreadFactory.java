@@ -74,12 +74,12 @@ public class ProgressPollableThreadFactory {
 			progress.setBreaked();
 		}
 	}
-
-	public ThreadPoolExecutor getThreadExecutor() {
-		return threadExecutor;
-	}
-
-	public void setThreadExecutor(ThreadPoolExecutor threadExecutor) {
-		this.threadExecutor = threadExecutor;
-	}
+//
+//	public ThreadPoolExecutor getThreadExecutor() {
+//		return threadExecutor;
+//	}
+//
+//	public void setThreadExecutor(ThreadPoolExecutor threadExecutor) {
+//		this.threadExecutor = threadExecutor;
+//	}
 }
