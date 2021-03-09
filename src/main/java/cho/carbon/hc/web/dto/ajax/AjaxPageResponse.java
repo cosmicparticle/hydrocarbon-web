@@ -10,8 +10,6 @@ import com.alibaba.fastjson.annotation.JSONField;
  * <p>Description: </p><p>
  * 页面发送ajax请求来执行数据时的响应对象，与cpf-ajax中的JsonResponse对象对应
  * </p>
- * @author Copperfield Zhang
- * @date 2017年1月16日 下午5:35:52
  */
 public class AjaxPageResponse {
 	//当前页面的动作

@@ -17,8 +17,6 @@ import org.springframework.util.StreamUtils;
  * 用于将json请求时，Controller直接返回的字符的编码转换，
  * 默认是转换成utf-8
  * </p>
- * @author Copperfield Zhang
- * @date 2016年3月11日 下午3:06:45
  */
 public class JsonStringConverter extends AbstractHttpMessageConverter<String>{
 

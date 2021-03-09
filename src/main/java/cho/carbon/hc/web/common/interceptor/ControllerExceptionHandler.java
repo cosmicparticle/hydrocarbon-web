@@ -1,8 +1,7 @@
-package cho.carbon.hc.web;
+package cho.carbon.hc.web.common.interceptor;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.util.ClassUtils;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * 通用的Controller错误处理机制，将错误显示到控制台后将错误信息返回到页面
  * </p>
  */
-@ControllerAdvice
+//@ControllerAdvice
 public class ControllerExceptionHandler {
 
     @ResponseBody

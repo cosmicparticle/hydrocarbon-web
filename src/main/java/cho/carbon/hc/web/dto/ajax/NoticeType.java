@@ -5,8 +5,6 @@ package cho.carbon.hc.web.dto.ajax;
  * <p>Description: </p><p>
  * 响应的通知类型
  * </p>
- * @author Copperfield Zhang
- * @date 2017年1月17日 上午9:26:44
  */
 public enum NoticeType {
 	ERROR("error"),
