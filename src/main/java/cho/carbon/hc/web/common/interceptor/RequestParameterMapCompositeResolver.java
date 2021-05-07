@@ -8,6 +8,9 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import cho.carbon.hc.file.FilePublisher;
+import cho.carbon.util.MD5Util;
+import cho.carbon.util.StringHelper;
 import org.apache.commons.fileupload.FileUploadException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,7 +86,14 @@ public class RequestParameterMapCompositeResolver implements HandlerMethodArgume
 			Map<String, MultipartFile> fileMap = mreq.getFileMap();
 			fileMap.forEach((key, file)->{
 				try {
-					result.put(key, new BytesInfoVO(file.getOriginalFilename(),null,Double.valueOf(file.getSize())/1000,file.getBytes()));
+					Double size=Double.valueOf(file.getSize())/1000;
+
+					String code= MD5Util.encryptMD5(file.getBytes());
+					BytesInfoVO bytesInfoVO=new BytesInfoVO(null,code,file.getOriginalFilename(),StringHelper.getFileNameSuffix(file.getOriginalFilename()),size,file.getBytes());
+					result.put(key, bytesInfoVO);
+					if(size>5000){//大于5000KB，直接缓存
+						FilePublisher.getInstance().putBytesInfoVO(bytesInfoVO.getCode(),bytesInfoVO);
+					}
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
