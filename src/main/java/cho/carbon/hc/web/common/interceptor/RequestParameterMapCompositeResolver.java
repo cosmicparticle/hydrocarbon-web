@@ -28,8 +28,7 @@ import cho.carbon.vo.BytesInfoVO;
 public class RequestParameterMapCompositeResolver implements HandlerMethodArgumentResolver{
 
 	Logger logger = LoggerFactory.getLogger(RequestParameterMapCompositeResolver.class);
-	
-	
+
 	@Override
 	public boolean supportsParameter(MethodParameter parameter) {
 		Class<?> paramClass = parameter.getParameterType();
